@@ -14,11 +14,11 @@ export default class Home extends Component {
           <h1>{title}</h1>
           <HomeContent />
           <ul>
-            {brands.map((cat, k) => (
+            {brands.map((brand, k) => (
               <li key={k}>
                 <h2>{brand.name}</h2>
                 <p>{brand.description}</p>
-                <img>{brand.iamge}</img>
+                <img>{brand.image}</img>
               </li>
             ))}
           </ul>
