@@ -18,7 +18,6 @@ export default class Home extends Component {
               <li key={k}>
                 <h2>{brand.name}</h2>
                 <p>{brand.description}</p>
-                <img>{brand.image}</img>
               </li>
             ))}
           </ul>
