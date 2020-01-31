@@ -7,4 +7,4 @@ styles:
     rule: backgroundColor
     value: white
 ---
-![furniture](/img/screen-shot-2020-01-31-at-11.47.43-am.png "Envizzo")
+All in one platform to design and edit your spaces.
