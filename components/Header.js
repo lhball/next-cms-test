@@ -8,9 +8,13 @@ const Header = ({links, styles}) => {
       marginRight: 15,
       fontSize: 'small',
     },
+    headerLinkImage: {
+      maxWidth: 50,
+      maxHeight: 50
+    }
   };
 
-  const {headerLink, headerContainer} = headerStyles
+  const { headerLink, headerContainer, headerLinkImage} = headerStyles
 
   !!styles && styles.map((style) => {
     headerStyles[style.class][style.rule] = style.value
@@ -19,11 +23,11 @@ const Header = ({links, styles}) => {
   return (
   <div style={headerContainer}>
     {
-      links.map((link, k) => {
+      !!links && links.map((link, k) => {
         return (
           <a key={k} href={"http://" + link.href} style={headerLink}>{
-            link.logo ?
-            <img src={link.logo}/> :
+            link.image ?
+              <img style={headerLinkImage} src={link.image}/> :
             link.title
           }</a>
         )

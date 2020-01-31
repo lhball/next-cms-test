@@ -67,6 +67,7 @@ collections:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
             - { label: "Price", name: "price", widget: "integer"}
+            - { label: "Image", name: "image", widget: "image"}
         - label: 'Brands'
           name: "brands"
           widget: list
@@ -74,14 +75,21 @@ collections:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
             - { label: "Image", name: "image", widget: "image"}
-        - label: 'Links'
-          name: "links"
+        - label: 'Header Links'
+          name: "headerLinks"
           widget: list
           fields:
             - { label: "Title", name: "title", widget: "string"}
             - { label: "href", name: "href", widget: "text"}
             - { label: "Image", name: "image", widget: "image"}
-        - label: 'styles'
+          - label: 'Footer Links'
+          name: "footerLinks"
+          widget: list
+          fields:
+            - { label: "Title", name: "title", widget: "string"}
+            - { label: "href", name: "href", widget: "text"}
+            - { label: "Image", name: "image", widget: "image"}
+        - label: 'Page Styles'
           name: "styles"
           widget: list
           fields:

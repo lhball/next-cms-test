@@ -1,1 +1,0 @@
-- { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
