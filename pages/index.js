@@ -6,6 +6,7 @@ import Header from '../components/Header';
 export default class Home extends Component {
   render() {
     let { title, body, links, styles} = attributes;
+    console.log(attributes)
     return (
       <>
         <Head>
