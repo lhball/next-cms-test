@@ -58,11 +58,11 @@ collections:
       file: "content/home.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
+        - { label: "Publish Date", name: "date", widget: "datetime"}
         - { label: "Body", name: "body", widget: "markdown", required: false}
         - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["attributes.title", "attributes.type"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        # - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        # - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
   # -------------------
   # modules collection
   # -------------------
@@ -80,36 +80,36 @@ collections:
   # -------------------
   # headerLinks collection
   # -------------------
-  - name: "headerLinks"
-    label: 'Header Links'
-    folder: 'content/headerLinks'
-    create: true # Allow users to create new documents in this collection
-    fields:
-      - label: "Attributes", name: "title", widget: "object", fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "href", name: "href", widget: "text"}
-        - { label: "Image", name: "image", widget: "image", required: false}
-  # -------------------
-  # footerLinks collection
-  # -------------------
-  - name: "footerLinks"
-    label: 'Footer Links'
-    folder: 'content/footerLinks'
-    create: true # Allow users to create new documents in this collection
-    fields:
-      - label: "Attributes", name: "title", widget: "object", fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "href", name: "href", widget: "text"}
-        - { label: "Image", name: "image", widget: "image", required: false}
-  # -------------------
-  # styles collection
-  # -------------------
-  - name: "styles"
-    label: 'Page Styles'
-    folder: 'content/styles'
-    create: true # Allow users to create new documents in this collection
-    fields:
-      - label: "Attributes", name: "title", widget: "object", fields:
-        - { label: "Class", name: "class", widget: "string"}
-        - { label: "Rule", name: "rule", widget: "string"}
-        - { label: "Value", name: "value", widget: "string"}
+  # - name: "headerLinks"
+  #   label: 'Header Links'
+  #   folder: 'content/headerLinks'
+  #   create: true # Allow users to create new documents in this collection
+  #   fields:
+  #     - label: "Attributes", name: "title", widget: "object", fields:
+  #       - { label: "Title", name: "title", widget: "string"}
+  #       - { label: "href", name: "href", widget: "text"}
+  #       - { label: "Image", name: "image", widget: "image", required: false}
+  # # -------------------
+  # # footerLinks collection
+  # # -------------------
+  # - name: "footerLinks"
+  #   label: 'Footer Links'
+  #   folder: 'content/footerLinks'
+  #   create: true # Allow users to create new documents in this collection
+  #   fields:
+  #     - label: "Attributes", name: "title", widget: "object", fields:
+  #       - { label: "Title", name: "title", widget: "string"}
+  #       - { label: "href", name: "href", widget: "text"}
+  #       - { label: "Image", name: "image", widget: "image", required: false}
+  # # -------------------
+  # # styles collection
+  # # -------------------
+  # - name: "styles"
+  #   label: 'Page Styles'
+  #   folder: 'content/styles'
+  #   create: true # Allow users to create new documents in this collection
+  #   fields:
+  #       - label: "Attributes", name: "title", widget: "object", fields:
+  #         - { label: "Class", name: "class", widget: "string"}
+  #         - { label: "Rule", name: "rule", widget: "string"}
+  #         - { label: "Value", name: "value", widget: "string"}
