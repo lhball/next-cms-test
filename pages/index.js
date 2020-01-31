@@ -22,27 +22,30 @@ export default class Home extends Component {
           <HomeContent />
           {body}
         </div>
-        {
-          !!modules && modules.map((module) => {
-            // module = JSON.parse(module)
-            // console.log(module)
-            return (<BannerModule module={module} styles={styles} />)
-          })
-        }
+        <div className="modules-container">
+          {
+            !!modules && modules.map((module) => {
+              // module = JSON.parse(module)
+              // console.log(module)
+              return (<BannerModule module={module} styles={styles} />)
+            })
+          }
+        </div>
         <Footer links={footerItems} styles={styles} />
         {/* Start global styling */}
         <style global jsx>{`
           .menu { grid-area: menu; }
           .article { grid-area: article; }
-          .banner { grid-area: main; }
+          /* .banner { grid-area: main; } */
           .grid-container {
             display: grid;
-            grid-column-gap: 10px;
+            grid-auto-rows: auto;
+            grid-auto-columns: auto;
             grid-template-areas:
-              'header header header header'
-              'article article article article'
-              'main main main main'
-              'footer footer footer footer';
+              'header'
+              'article'
+              'main'
+              'footer';
             grid-gap: 10px;
             padding: 10px;
           }
@@ -60,6 +63,11 @@ export default class Home extends Component {
             text-align: center;
             font-size: 30px;
             background-color: lightblue;
+          }
+          .modules-container {
+            display: grid;
+            grid-gap: 50px;
+          }
         `}
         </style>
         {/* End global styling */}

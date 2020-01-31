@@ -20,14 +20,10 @@ const BannerModule = ({module}, styles) => {
       <Markdown renderers={{ paragraph: withoutPTags }}>
         {body}
       </Markdown>
-      <Markdown renderers={{ paragraph: withoutPTags }}>
-        {image}
-      </Markdown>
+      <img src={image} />
     </> :
     <>
-      <Markdown renderers={{ paragraph: withoutPTags }}>
-        {image}
-      </Markdown>
+      <img src={image} />
       <Markdown renderers={{ paragraph: withoutPTags }}>
         {body}
       </Markdown>
@@ -43,9 +39,9 @@ const BannerModule = ({module}, styles) => {
       <style jsx>{`
         .banner {
           display: grid;
-          grid-column-gap: 15px;
           grid-template-areas: 'title image';
           justify-content: space-evenly;
+          grid-gap: 15px;
         }
       `}
       </style>
