@@ -3,10 +3,11 @@ import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BannerModule from '../components/BannerModule';
 
 export default class Home extends Component {
   render() {
-    let { title, body, headerLinks, footerLinks, styles} = attributes;
+    let { title, body, modules, headerLinks, footerLinks, styles} = attributes;
     console.log(attributes)
     return (
       <div className="grid-container">
@@ -19,7 +20,12 @@ export default class Home extends Component {
         <div className="article">
           <h1>{title}</h1>
           <HomeContent />
-          <p>{body}</p>
+          {body}
+          {
+            !!modules && modules.map((module) => {
+              (<BannerModule module={module} />)
+            })
+          }
         </div>
         <Footer links={footerLinks} styles={styles} />
         {/* Start global styling */}

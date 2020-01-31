@@ -59,40 +59,55 @@ collections:
       fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Products'
-          name: "products"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
-            - { label: "Price", name: "price", widget: "integer"}
-            - { label: "Image", name: "image", widget: "image"}
-        - label: 'Brands'
-          name: "brands"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
-            - { label: "Image", name: "image", widget: "image"}
-        - label: 'Header Links'
-          name: "headerLinks"
-          widget: list
-          fields:
-            - { label: "Title", name: "title", widget: "string"}
-            - { label: "href", name: "href", widget: "text"}
-            - { label: "Image", name: "image", widget: "image"}
-        - label: 'Footer Links'
-          name: "footerLinks"
-          widget: list
-          fields:
-            - { label: "Title", name: "title", widget: "string"}
-            - { label: "href", name: "href", widget: "text"}
-            - { label: "Image", name: "image", widget: "image"}
-        - label: 'Page Styles'
-          name: "styles"
-          widget: list
-          fields:
-            - { label: "Class", name: "class", widget: "string"}
-            - { label: "Rule", name: "rule", widget: "string"}
-            - { label: "Value", name: "value", widget: "string"}
+        - { label: "Body", name: "body", widget: "markdown", required: false}
+        - { label: "Modules", widget: "relation", collection: "modules", searchFields: ["name", "type"], valueField: "type", displayFields: ["name", "body"], required: false}
+        - { label: "Header Items", widget: "relation", collection: "headerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
+        - { label: "Footer Items", widget: "relation", collection: "footerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
+  # -------------------
+  # modules collection
+  # -------------------
+  - name: "modules"
+    label: 'Modules'
+    folder: 'content/modules'
+    create: true # Allow users to create new documents in this collection
+    widget: list
+    fields:
+      - { label: "Type", name: "type", widget: "string"}
+      - { label: "Body", name: "body", widget: "text"}
+      - { label: "Image", name: "image", widget: "image", required: false}
+  # -------------------
+  # headerLinks collection
+  # -------------------
+  - name: "headerLinks"
+    label: 'Header Links'
+    folder: 'content/headerLinks'
+    create: true # Allow users to create new documents in this collection
+    widget: list
+    fields:
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "href", name: "href", widget: "text"}
+      - { label: "Image", name: "image", widget: "image", required: false}
+  # -------------------
+  # footerLinks collection
+  # -------------------
+  - name: "footerLinks"
+    label: 'Footer Links'
+    folder: 'content/footerLinks'
+    create: true # Allow users to create new documents in this collection
+    widget: list
+    fields:
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "href", name: "href", widget: "text"}
+      - { label: "Image", name: "image", widget: "image", required: false}
+  # -------------------
+  # styles collection
+  # -------------------
+  - name: "styles"
+    label: 'Page Styles'
+    folder: 'content/styles'
+    create: true # Allow users to create new documents in this collection
+    widget: list
+    fields:
+      - { label: "Class", name: "class", widget: "string"}
+      - { label: "Rule", name: "rule", widget: "string"}
+      - { label: "Value", name: "value", widget: "string"}
