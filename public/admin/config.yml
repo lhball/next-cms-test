@@ -78,7 +78,7 @@ collections:
       name: "attributes"
       widget: "object"
       fields:
-        - { label: "Type", name: "type", widget: "select", options: ["banner"]}
+        - { label: "Type", name: "type", widget: "select", options: ["banner", "banner-left"]}
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Body", name: "body", widget: "markdown"}
         - { label: "Image", name: "image", widget: "image", required: false}

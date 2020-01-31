@@ -37,6 +37,7 @@ export default class Home extends Component {
           .banner { grid-area: main; }
           .grid-container {
             display: grid;
+            grid-column-gap: 10px;
             grid-template-areas:
               'header header header header'
               'article article article article'
@@ -46,7 +47,8 @@ export default class Home extends Component {
             padding: 10px;
           }
           .banner img {
-            max-width: 50vw;
+            max-width: 100%;
+            object-fit: contain;
             height: auto;
           }
           .banner p {
@@ -56,7 +58,6 @@ export default class Home extends Component {
           }
           .grid-container > div {
             text-align: center;
-            padding: 20px 0;
             font-size: 30px;
             background-color: lightblue;
         `}
