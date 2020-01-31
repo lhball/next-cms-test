@@ -60,9 +60,9 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown", required: false}
-        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["title", "type"], valueField: "type", displayFields: ["title", "body"], required: false}
-        - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
-        - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
+        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["attributes.title", "attributes.type"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
   # -------------------
   # modules collection
   # -------------------
@@ -71,12 +71,14 @@ collections:
     identifier_field: name
     folder: 'content/modules'
     create: true # Allow users to create new documents in this collection
-    widget: list
+    widget: "list"
     fields:
-      - { label: "Type", name: "type", widget: "select", options: ["banner"]}
-      - { label: "Title", name: "title", widget: "string"}
-      - { label: "Body", name: "body", widget: "markdown"}
-      - { label: "Image", name: "image", widget: "image", required: false}
+      - { label: "Attributes", name: "title", widget: "object", fields:
+        - { label: "Type", name: "type", widget: "select", options: ["banner"]}
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Body", name: "body", widget: "markdown"}
+        - { label: "Image", name: "image", widget: "image", required: false}
+      }
   # -------------------
   # headerLinks collection
   # -------------------
@@ -86,9 +88,11 @@ collections:
     create: true # Allow users to create new documents in this collection
     widget: list
     fields:
-      - { label: "Title", name: "title", widget: "string"}
-      - { label: "href", name: "href", widget: "text"}
-      - { label: "Image", name: "image", widget: "image", required: false}
+      - { label: "Attributes", name: "title", widget: "object", fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "href", name: "href", widget: "text"}
+        - { label: "Image", name: "image", widget: "image", required: false}
+      }
   # -------------------
   # footerLinks collection
   # -------------------
@@ -98,9 +102,11 @@ collections:
     create: true # Allow users to create new documents in this collection
     widget: list
     fields:
-      - { label: "Title", name: "title", widget: "string"}
-      - { label: "href", name: "href", widget: "text"}
-      - { label: "Image", name: "image", widget: "image", required: false}
+      - { label: "Attributes", name: "title", widget: "object", fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "href", name: "href", widget: "text"}
+        - { label: "Image", name: "image", widget: "image", required: false}
+      }
   # -------------------
   # styles collection
   # -------------------
@@ -110,6 +116,8 @@ collections:
     create: true # Allow users to create new documents in this collection
     widget: list
     fields:
-      - { label: "Class", name: "class", widget: "string"}
-      - { label: "Rule", name: "rule", widget: "string"}
-      - { label: "Value", name: "value", widget: "string"}
+      - { label: "Attributes", name: "title", widget: "object", fields:
+        - { label: "Class", name: "class", widget: "string"}
+        - { label: "Rule", name: "rule", widget: "string"}
+        - { label: "Value", name: "value", widget: "string"}
+      }

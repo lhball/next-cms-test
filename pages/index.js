@@ -22,9 +22,9 @@ export default class Home extends Component {
           <HomeContent />
           {body}
           {
-            !!modules && modules.map((module) => {
-              (<BannerModule module={module} />)
-            })
+            // !!modules && modules.map((module) => {
+            //   (<BannerModule module={module} />)
+            // })
           }
         </div>
         <Footer links={footerLinks} styles={styles} />
