@@ -71,14 +71,12 @@ collections:
     identifier_field: name
     folder: 'content/modules'
     create: true # Allow users to create new documents in this collection
-    widget: "list"
     fields:
-      - { label: "Attributes", name: "title", widget: "object", fields:
+      - label: "Attributes", name: "title", widget: "object", fields:
         - { label: "Type", name: "type", widget: "select", options: ["banner"]}
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Body", name: "body", widget: "markdown"}
         - { label: "Image", name: "image", widget: "image", required: false}
-      }
   # -------------------
   # headerLinks collection
   # -------------------
@@ -86,13 +84,11 @@ collections:
     label: 'Header Links'
     folder: 'content/headerLinks'
     create: true # Allow users to create new documents in this collection
-    widget: list
     fields:
-      - { label: "Attributes", name: "title", widget: "object", fields:
+      - label: "Attributes", name: "title", widget: "object", fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "href", name: "href", widget: "text"}
         - { label: "Image", name: "image", widget: "image", required: false}
-      }
   # -------------------
   # footerLinks collection
   # -------------------
@@ -100,13 +96,11 @@ collections:
     label: 'Footer Links'
     folder: 'content/footerLinks'
     create: true # Allow users to create new documents in this collection
-    widget: list
     fields:
-      - { label: "Attributes", name: "title", widget: "object", fields:
+      - label: "Attributes", name: "title", widget: "object", fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "href", name: "href", widget: "text"}
         - { label: "Image", name: "image", widget: "image", required: false}
-      }
   # -------------------
   # styles collection
   # -------------------
@@ -114,10 +108,8 @@ collections:
     label: 'Page Styles'
     folder: 'content/styles'
     create: true # Allow users to create new documents in this collection
-    widget: list
     fields:
-      - { label: "Attributes", name: "title", widget: "object", fields:
+      - label: "Attributes", name: "title", widget: "object", fields:
         - { label: "Class", name: "class", widget: "string"}
         - { label: "Rule", name: "rule", widget: "string"}
         - { label: "Value", name: "value", widget: "string"}
-      }
