@@ -1,7 +1,8 @@
 ---
-title: test
+title: about
 attributes:
-  href: google.com
-  title: test
+  href: www.luisball.com
+  image: /img/external-content.duckduckgo.png
+  title: about
 ---
 
