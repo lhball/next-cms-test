@@ -3,7 +3,7 @@ backend:
   branch: master
 media_folder: public/img
 public_folder: img
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 collections:
   # -------------------
   # posts collection
@@ -60,9 +60,9 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime"}
         - { label: "Body", name: "body", widget: "markdown", required: false}
-        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["attributes.title", "attributes.type"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Modules", name: "modules", widget: "relation", multiple: true, collection: "modules", searchFields: ["attributes.title", "attributes.type"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Header Items", name: "headerItems", widget: "relation", multiple: true, collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Footer Items", name: "footerItems", widget: "relation", multiple: true, collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
   # -------------------
   # modules collection
   # -------------------

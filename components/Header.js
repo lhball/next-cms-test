@@ -16,6 +16,8 @@ const Header = ({links, styles}) => {
 
   const { headerLink, headerContainer, headerLinkImage} = headerStyles
 
+  debugger
+
   !!styles && styles.map((style) => {
     headerStyles[style.class][style.rule] = style.value
   })
@@ -23,7 +25,7 @@ const Header = ({links, styles}) => {
   return (
   <div style={headerContainer}>
     {
-      !!links && links.map((link, k) => {
+      !!links && [links].map((link, k) => {
         return (
           <a key={k} href={"http://" + link.href} style={headerLink}>{
             link.image ?
