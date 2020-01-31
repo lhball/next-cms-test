@@ -10,9 +10,11 @@ export default class Home extends Component {
     console.log(attributes)
     return (
       <div className="grid-container">
+        {/* Start CMS script */}
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
+        {/* End CMS script */}
         <Header className="header" links={headerLinks} styles={styles} />
         <div className="article">
           <h1>{title}</h1>
@@ -20,27 +22,27 @@ export default class Home extends Component {
           <p>{body}</p>
         </div>
         <Footer links={footerLinks} styles={styles} />
-        {/* global styling */}
+        {/* Start global styling */}
         <style global jsx>{`
-      .menu { grid-area: menu; }
-      .article { grid-area: main; }
-      .grid-container {
-        display: grid;
-        grid-template-areas:
-          'header header header header'
-          'main main main main'
-          'footer footer footer footer';
-        grid-gap: 10px;
-        padding: 10px;
-      }
-
-      .grid-container > div {
-        text-align: center;
-        padding: 20px 0;
-        font-size: 30px;
-        background-color: lightblue;
-    `}
+          .menu { grid-area: menu; }
+          .article { grid-area: main; }
+          .grid-container {
+            display: grid;
+            grid-template-areas:
+              'header header header header'
+              'main main main main'
+              'footer footer footer footer';
+            grid-gap: 10px;
+            padding: 10px;
+          }
+          .grid-container > div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+            background-color: lightblue;
+        `}
         </style>
+        {/* End global styling */}
       </div>
     )
   }

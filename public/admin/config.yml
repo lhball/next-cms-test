@@ -82,7 +82,7 @@ collections:
             - { label: "Title", name: "title", widget: "string"}
             - { label: "href", name: "href", widget: "text"}
             - { label: "Image", name: "image", widget: "image"}
-          - label: 'Footer Links'
+        - label: 'Footer Links'
           name: "footerLinks"
           widget: list
           fields:
