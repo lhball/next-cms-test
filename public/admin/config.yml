@@ -60,7 +60,7 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown", required: false}
-        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["name", "type"], valueField: "type", displayFields: ["name", "body"], required: false}
+        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["title", "type"], valueField: "type", displayFields: ["title", "body"], required: false}
         - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
         - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
   # -------------------
@@ -68,13 +68,14 @@ collections:
   # -------------------
   - name: "modules"
     label: 'Modules'
+    identifier_field: name
     folder: 'content/modules'
     create: true # Allow users to create new documents in this collection
     widget: list
     fields:
       - { label: "Type", name: "type", widget: "select", options: ["banner"]}
-      - { label: "Name", name: "name", widget: "string"}
-      - { label: "Body", name: "body", widget: "text"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
       - { label: "Image", name: "image", widget: "image", required: false}
   # -------------------
   # headerLinks collection
