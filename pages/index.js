@@ -16,7 +16,7 @@ export default class Home extends Component {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         {/* End CMS script */}
-        <Header className="header" links={JSON.parse(headerItems)} styles={styles} />
+        {/* <Header className="header" links={JSON.parse(headerItems)} styles={styles} /> */}
         <div className="article">
           <h1>{title}</h1>
           <HomeContent />
