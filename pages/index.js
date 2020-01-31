@@ -7,7 +7,7 @@ import BannerModule from '../components/BannerModule';
 
 export default class Home extends Component {
   render() {
-    let { title, body, modules, headerItems, footerLinks, styles} = attributes;
+    let { title, body, modules, headerItems, footerItems, styles} = attributes;
     console.log(attributes)
     return (
       <div className="grid-container">
@@ -16,18 +16,19 @@ export default class Home extends Component {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         {/* End CMS script */}
-        {/* <Header className="header" links={JSON.parse(headerItems)} styles={styles} /> */}
+        <Header className="header" links={headerItems} styles={styles} />
         <div className="article">
           <h1>{title}</h1>
           <HomeContent />
           {body}
           {
-            // !!modules && modules.map((module) => {
-            //   (<BannerModule module={module} />)
-            // })
+            !!modules && modules.map((module) => {
+              module = JSON.parse(module)
+              (<BannerModule module={module} />)
+            })
           }
         </div>
-        <Footer links={footerLinks} styles={styles} />
+        <Footer links={footerItems} styles={styles} />
         {/* Start global styling */}
         <style global jsx>{`
           .menu { grid-area: menu; }

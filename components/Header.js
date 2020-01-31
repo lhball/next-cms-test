@@ -16,16 +16,16 @@ const Header = ({links, styles}) => {
 
   const { headerLink, headerContainer, headerLinkImage} = headerStyles
 
-  debugger
-
   !!styles && styles.map((style) => {
+    style = JSON.parse(style)
     headerStyles[style.class][style.rule] = style.value
   })
 
   return (
-  <div style={headerContainer}>
+  <div className="header" style={headerContainer}>
     {
-      !!links && [links].map((link, k) => {
+      !!links && links.map((link, k) => {
+        link = JSON.parse(link)
         return (
           <a key={k} href={"http://" + link.href} style={headerLink}>{
             link.image ?

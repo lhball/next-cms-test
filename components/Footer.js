@@ -18,6 +18,7 @@ const Footer = ({ links, styles }) => {
   const { footerLink, footerContainer, footerLinkImage } = footerStyles
 
   !!styles && styles.map((style) => {
+    style = JSON.parse(style)
     if (!!footerStyles[style.class]) footerStyles[style.class][style.rule] = style.value
   })
 
@@ -25,6 +26,7 @@ const Footer = ({ links, styles }) => {
     <div style={footerContainer}>
       {
         !!links && links.map((link, k) => {
+          link = JSON.parse(link)
           return (
             <a key={k} href={"http://" + link.href} style={footerLink}>{
               link.image ?

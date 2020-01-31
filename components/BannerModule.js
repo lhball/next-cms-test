@@ -18,6 +18,7 @@ const BannerModule = (module) => {
   const { bannerLink, bannerContainer, bannerLinkImage } = bannerStyles
 
   !!styles && styles.map((style) => {
+    style = JSON.parse(style)
     bannerStyles[style.class][style.rule] = style.value
   })
 
