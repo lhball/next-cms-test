@@ -73,6 +73,7 @@ collections:
     widget: list
     fields:
       - { label: "Type", name: "type", widget: "string"}
+      - { label: "Name", name: "name", widget: "string"}
       - { label: "Body", name: "body", widget: "text"}
       - { label: "Image", name: "image", widget: "image", required: false}
   # -------------------
