@@ -13,11 +13,11 @@ export default class Home extends Component {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <Header className="header" links={links} styles={styles} />
-        <article className="article">
+        <div className="article">
           <h1>{title}</h1>
           <HomeContent />
           <p>{body}</p>
-        </article>
+        </div>
         <div className="footer">
           <p>Footer content</p>
         </div>
@@ -29,9 +29,9 @@ export default class Home extends Component {
       .grid-container {
         display: grid;
         grid-template-areas:
-          'header header'
-          'main main'
-          'footer footer';
+          'header header header header'
+          'main main main main'
+          'footer footer footer footer';
         grid-gap: 10px;
         padding: 10px;
       }
@@ -40,6 +40,7 @@ export default class Home extends Component {
         text-align: center;
         padding: 20px 0;
         font-size: 30px;
+        background-color: lightblue;
     `}
         </style>
       </div>

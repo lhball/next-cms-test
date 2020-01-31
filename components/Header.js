@@ -1,33 +1,32 @@
-import Link from 'next/link';
-
-const Header = (links, styles) => {
+const Header = ({links, styles}) => {
 
   const headerStyles = {
-    containerStyle: {
+    headerContainer: {
       padding: 0,
-      backgroundColor: !!styles.backgroundColor ? styles.backgroundColor : '',
     },
-    linkStyle: {
+    headerLink: {
       marginRight: 15,
       fontSize: 'small',
     },
   };
 
-  Object.keys(styles).forEach((rule) => {
-    console.log(styles[rule])
+  const {headerLink, headerContainer} = headerStyles
+
+  !!styles && styles.map((style) => {
+    headerStyles[style.class][style.rule] = style.value
   })
 
-
-  console.log(links)
-  console.log(styles)
-  const {linkStyle, containerStyle} = headerStyles
   return (
-  <div style={containerStyle}>
+  <div style={headerContainer}>
     {
-      links.links.map((link, k) => {
-        return (<Link href={link.href} >
-          <a style={linkStyle}>{link.title}</a>
-        </Link>)
+      links.map((link, k) => {
+        return (
+          <a key={k} href={"http://" + link.href} style={headerLink}>{
+            link.logo ?
+            <img src={link.logo}/> :
+            link.title
+          }</a>
+        )
       })
     }
     <style jsx>{`

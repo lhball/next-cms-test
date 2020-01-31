@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "proxy": "npx netlify-cms-proxy-server",
     "build": "next build",
     "start": "next start",
     "export": "npm run build && next export",
