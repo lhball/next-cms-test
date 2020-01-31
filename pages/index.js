@@ -21,26 +21,38 @@ export default class Home extends Component {
           <h1>{title}</h1>
           <HomeContent />
           {body}
-          {
-            !!modules && modules.map((module) => {
-              module = JSON.parse(module)
-              (<BannerModule module={module} />)
-            })
-          }
         </div>
+        {
+          !!modules && modules.map((module) => {
+            // module = JSON.parse(module)
+            // console.log(module)
+            return (<BannerModule module={module} styles={styles} />)
+          })
+        }
         <Footer links={footerItems} styles={styles} />
         {/* Start global styling */}
         <style global jsx>{`
           .menu { grid-area: menu; }
-          .article { grid-area: main; }
+          .article { grid-area: article; }
+          .banner { grid-area: main; }
           .grid-container {
             display: grid;
             grid-template-areas:
               'header header header header'
+              'article article article article'
               'main main main main'
               'footer footer footer footer';
             grid-gap: 10px;
             padding: 10px;
+          }
+          .banner img {
+            max-width: 50vw;
+            height: auto;
+          }
+          .banner p {
+            padding: 10px;
+            text-align: left;
+            margin: auto;
           }
           .grid-container > div {
             text-align: center;

@@ -1,36 +1,38 @@
-const BannerModule = (module) => {
-  const { type, body, image } = module
+import Markdown from 'react-markdown'
+
+const BannerModule = ({module}, styles) => {
+  console.log(module)
+  const { type, body, image } = JSON.parse(module)
 
   const bannerStyles = {
-    bannerContainer: {
-      padding: 0,
-    },
-    bannerLink: {
-      marginRight: 15,
-      fontSize: 'small',
-    },
-    bannerLinkImage: {
-      maxWidth: 50,
-      maxHeight: 50
-    }
   };
 
-  const { bannerLink, bannerContainer, bannerLinkImage } = bannerStyles
+  // !!styles && styles.map((style) => {
+  //   style = JSON.parse(style)
+  //   bannerStyles[style.class][style.rule] = style.value
+  // })
 
-  !!styles && styles.map((style) => {
-    style = JSON.parse(style)
-    bannerStyles[style.class][style.rule] = style.value
-  })
-
-  console.log(type, body, image, bannerStyles)
+  console.log(type, body, styles, bannerStyles)
 
   return (
-    <div style={bannerContainer}>
+    <>
+      <div className="banner" style={bannerStyles} >
+        <Markdown>
+          {body}
+        </Markdown>
+        <Markdown>
+          {image}
+        </Markdown>
+      </div>
       <style jsx>{`
-      .banner { grid-area: main; }
-    `}
+        .banner {
+          display: grid;
+          grid-template-areas: 'title image';
+          justify-content: space-evenly;
+        }
+      `}
       </style>
-    </div>
+    </>
   )
 };
 
