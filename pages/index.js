@@ -3,7 +3,7 @@ import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BannerModule from '../components/BannerModule';
+import ModuleContent from '../components/BannerModule';
 
 export default class Home extends Component {
   render() {
@@ -17,25 +17,25 @@ export default class Home extends Component {
         </Head>
         {/* End CMS script */}
         <Header className="header" links={headerItems} styles={styles} />
-        <div className="article">
-          <h1>{title}</h1>
-          <HomeContent />
-          {body}
-        </div>
-        <div className="modules-container">
-          {
-            !!modules && modules.map((module) => {
-              // module = JSON.parse(module)
-              // console.log(module)
-              return (<BannerModule module={module} styles={styles} />)
-            })
-          }
+        <div className="main">
+          <div className="modules-container">
+            <ModuleContent />
+            <ModuleContent />
+            <ModuleContent />
+            {/* {
+              !!modules && modules.map((module) => {
+                // module = JSON.parse(module)
+                // console.log(module)
+                return (<ModuleContent module={module} styles={styles} />)
+              })
+            } */}
+          </div>
         </div>
         <Footer links={footerItems} styles={styles} />
         {/* Start global styling */}
         <style global jsx>{`
           .menu { grid-area: menu; }
-          .article { grid-area: article; }
+          .main { grid-area: main; }
           /* .banner { grid-area: main; } */
           .grid-container {
             display: grid;
@@ -43,7 +43,6 @@ export default class Home extends Component {
             grid-auto-columns: auto;
             grid-template-areas:
               'header'
-              'article'
               'main'
               'footer';
             grid-gap: 10px;
@@ -61,8 +60,9 @@ export default class Home extends Component {
           }
           .grid-container > div {
             text-align: center;
-            font-size: 30px;
+            /* font-size: 30px; */
             background-color: lightblue;
+            border: 1px solid orange;
           }
           .modules-container {
             display: grid;
