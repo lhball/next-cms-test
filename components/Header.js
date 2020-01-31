@@ -11,7 +11,8 @@ const Header = (links, styles) => {
   })
 
 
-  console.log(links, styles)
+  console.log({...links})
+  console.log(styles)
   return (
   <div>
     {
