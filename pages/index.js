@@ -19,16 +19,13 @@ export default class Home extends Component {
         <Header className="header" links={headerItems} styles={styles} />
         <div className="main">
           <div className="modules-container">
-            <ModuleContent />
-            <ModuleContent />
-            <ModuleContent />
-            {/* {
+            {
               !!modules && modules.map((module) => {
                 // module = JSON.parse(module)
                 // console.log(module)
                 return (<ModuleContent module={module} styles={styles} />)
               })
-            } */}
+            }
           </div>
         </div>
         <Footer links={footerItems} styles={styles} />
@@ -60,7 +57,6 @@ export default class Home extends Component {
           }
           .grid-container > div {
             text-align: center;
-            /* font-size: 30px; */
             background-color: lightblue;
             border: 1px solid orange;
           }

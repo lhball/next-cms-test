@@ -21,9 +21,33 @@ collections:
       fields:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime"}
-        - { label: "Modules", name: "modules", widget: "relation", multiple: true, collection: "modules", searchFields: ["attributes.title", "attributes.type"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Header Items", name: "headerItems", widget: "relation", multiple: true, collection: "headerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
-        - { label: "Footer Items", name: "footerItems", widget: "relation", multiple: true, collection: "footerLinks", searchFields: ["attributes.title"], valueField: "attributes", displayFields: ["attributes.title"], required: false}
+        - { label: "Modules",
+            name: "modules",
+            widget: "relation",
+            multiple: true,
+            collection: "modules",
+            searchFields: ["attributes.title", "attributes.type"],
+            valueField: "attributes",
+            displayFields: ["attributes.title"],
+            required: false}
+        - { label: "Header Items",
+            name: "headerItems",
+            widget: "relation",
+            multiple: true,
+            collection: "headerLinks",
+            searchFields: ["attributes.title"],
+            valueField: "attributes",
+            displayFields: ["attributes.title"],
+            required: false}
+        - { label: "Footer Items",
+            name: "footerItems",
+            widget: "relation",
+            multiple: true,
+            collection: "footerLinks",
+            searchFields: ["attributes.title"],
+            valueField: "attributes",
+            displayFields: ["attributes.title"],
+            required: false}
   # -------------------
   # modules collection
   # -------------------

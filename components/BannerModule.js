@@ -1,20 +1,18 @@
-const BannerModule = ({module}, styles) => {
-  console.log(module)
-  const { type, body, image } = module ? module : { type: null, body: null, image: null };
+import Markdown from 'react-markdown';
+
+const BannerModule = ({module, styles}) => {
+  module = JSON.parse(module)
 
   const bannerStyles = {
   };
 
-  console.log(type, body, image, styles)
+  // console.log(type, body, image, styles)
 
   return (
     <>
       <div className="" style={bannerStyles} >
           <div className="banner banner-text">
-            {/* <h5>A placeholder title that probably spans more than 1 line at least.</h5> */}
-            {/* <img src="https://cdn4.calligaris.com/fileadmin/Materiale/Home/HP_2_Living_Mies.jpg" /> */}
-            {body}
-            {image}
+            <Markdown>{module.body}</Markdown>
           </div>
       </div>
       <style jsx>{`
