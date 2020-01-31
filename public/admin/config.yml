@@ -68,7 +68,7 @@ collections:
   # -------------------
   - name: "modules"
     label: 'Modules'
-    identifier_field: name
+    identifier_field: title
     folder: 'content/modules'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -85,7 +85,7 @@ collections:
   # -------------------
   - name: "headerLinks"
     label: 'Header Links'
-    identifier_field: name
+    identifier_field: title
     folder: 'content/headerLinks'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -101,7 +101,7 @@ collections:
   # -------------------
   - name: "footerLinks"
     label: 'Footer Links'
-    identifier_field: name
+    identifier_field: title
     folder: 'content/footerLinks'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -117,7 +117,7 @@ collections:
   # -------------------
   - name: "styles"
     label: 'Page Styles'
-    identifier_field: name
+    identifier_field: class
     folder: 'content/styles'
     create: true # Allow users to create new documents in this collection
     fields:
