@@ -68,6 +68,7 @@ collections:
   # -------------------
   - name: "modules"
     label: 'Modules'
+    extension: 'json'
     folder: 'content/modules'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -87,6 +88,7 @@ collections:
     label: 'Header Links'
     folder: 'content/headerLinks'
     create: true # Allow users to create new documents in this collection
+    extension: 'json'
     fields:
     - { label: "Title", name: "title", widget: "string"}
     - label: "Attributes"
@@ -101,6 +103,7 @@ collections:
   # -------------------
   - name: "footerLinks"
     label: 'Footer Links'
+    extension: 'json'
     folder: 'content/footerLinks'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -117,6 +120,7 @@ collections:
   # -------------------
   - name: "styles"
     label: 'Page Styles'
+    extension: 'json'
     folder: 'content/styles'
     create: true # Allow users to create new documents in this collection
     fields:
