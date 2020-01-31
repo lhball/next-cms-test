@@ -85,6 +85,7 @@ collections:
   # -------------------
   - name: "headerLinks"
     label: 'Header Links'
+    identifier_field: name
     folder: 'content/headerLinks'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -100,6 +101,7 @@ collections:
   # -------------------
   - name: "footerLinks"
     label: 'Footer Links'
+    identifier_field: name
     folder: 'content/footerLinks'
     create: true # Allow users to create new documents in this collection
     fields:
@@ -115,6 +117,7 @@ collections:
   # -------------------
   - name: "styles"
     label: 'Page Styles'
+    identifier_field: name
     folder: 'content/styles'
     create: true # Allow users to create new documents in this collection
     fields:
