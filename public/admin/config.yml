@@ -60,9 +60,9 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown", required: false}
-        - { label: "Modules", widget: "relation", collection: "modules", searchFields: ["name", "type"], valueField: "type", displayFields: ["name", "body"], required: false}
-        - { label: "Header Items", widget: "relation", collection: "headerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
-        - { label: "Footer Items", widget: "relation", collection: "footerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
+        - { label: "Modules", name: "modules", widget: "relation", collection: "modules", searchFields: ["name", "type"], valueField: "type", displayFields: ["name", "body"], required: false}
+        - { label: "Header Items", name: "headerItems", widget: "relation", collection: "headerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
+        - { label: "Footer Items", name: "footerItems", widget: "relation", collection: "footerLinks", searchFields: ["title"], valueField: "href", displayFields: ["title"], required: false}
   # -------------------
   # modules collection
   # -------------------
