@@ -5,9 +5,54 @@ media_folder: public/img
 public_folder: img
 publish_mode: editorial_workflow
 collections:
+  # -------------------
+  # posts collection
+  # -------------------
+  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Posts' # Used in the UI
+    label_singular: 'Post' # Used in the UI, ie: "New Post"
+    description: >
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
+    folder: 'content/posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+  # -------------------
+  # faq collection
+  # -------------------
+  - name: 'faq' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'FAQ' # Used in the UI
+    folder: 'content/faqs'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Question', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Answer', name: 'body', widget: 'markdown' }
+  # -------------------
+  # pages collection
+  # -------------------
   - name: "pages"
     label: "Pages"
     files:
+      # -------------------
+      # homepage
+      # -------------------
     - label: "Home"
       name: "home"
       file: "content/home.md"
@@ -29,3 +74,24 @@ collections:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
             - { label: "Image", name: "image", widget: "image"}
+      # -------------------
+      # Navigation
+      # -------------------
+    - label: "Navigation"
+      name: "navigation"
+      file: "content/navigation.md"
+      fields:
+        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Publish Date", name: "date", widget: "datetime" }
+        - { label: "Body", name: "body", widget: "markdown"}
+        - label: 'Links'
+          name: "links"
+          widget: list
+          fields:
+            - { label: "Title", name: "title", widget: "string"}
+            - { label: "href", name: "href", widget: "text"}
+        - label: 'styles'
+          name: "styles"
+          widget: list
+          fields:
+            - { label: "Background Color", name: "backgroundColor", widget: "string"}
