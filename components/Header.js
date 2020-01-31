@@ -2,8 +2,15 @@ import Link from 'next/link';
 
 const Header = (links, styles) => {
 
-  const linkStyle = {
-    marginRight: 15
+  const headerStyles = {
+    containerStyle: {
+      padding: 0,
+      backgroundColor: !!styles.backgroundColor ? styles.backgroundColor : '',
+    },
+    linkStyle: {
+      marginRight: 15,
+      fontSize: 'small',
+    },
   };
 
   Object.keys(styles).forEach((rule) => {
@@ -13,8 +20,9 @@ const Header = (links, styles) => {
 
   console.log(links)
   console.log(styles)
+  const {linkStyle, containerStyle} = headerStyles
   return (
-  <div className="i-exist">
+  <div style={containerStyle}>
     {
       links.links.map((link, k) => {
         return (<Link href={link.href} >
@@ -22,6 +30,10 @@ const Header = (links, styles) => {
         </Link>)
       })
     }
+    <style jsx>{`
+      .header { grid-area: header; }
+    `}
+    </style>
   </div>
   )
 };
