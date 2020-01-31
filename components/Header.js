@@ -11,16 +11,15 @@ const Header = (links, styles) => {
   })
 
 
-  console.log({...links})
+  console.log(links)
   console.log(styles)
   return (
-  <div>
+  <div className="i-exist">
     {
-      !!links && Object.values(links).map((link, k) => {
-        !!link ?
-        <Link href={link.href} >
+      links.links.map((link, k) => {
+        return (<Link href={link.href} >
           <a style={linkStyle}>{link.title}</a>
-        </Link> : null
+        </Link>)
       })
     }
   </div>
