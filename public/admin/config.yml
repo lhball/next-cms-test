@@ -72,7 +72,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     widget: list
     fields:
-      - { label: "Type", name: "type", widget: "string"}
+      - { label: "Type", name: "type", widget: "select", options: ["banner"]}
       - { label: "Name", name: "name", widget: "string"}
       - { label: "Body", name: "body", widget: "text"}
       - { label: "Image", name: "image", widget: "image", required: false}
