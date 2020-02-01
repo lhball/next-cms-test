@@ -1,7 +1,6 @@
 import Markdown from 'react-markdown';
 
-const BannerModule = ({module, styles}) => {
-  module = JSON.parse(module)
+const ImageAndTextBanner = ({module, styles}) => {
 
   const bannerStyles = {
   };
@@ -38,4 +37,4 @@ const BannerModule = ({module, styles}) => {
   )
 };
 
-export default BannerModule;
+export default ImageAndTextBanner;

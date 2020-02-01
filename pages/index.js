@@ -3,7 +3,7 @@ import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ModuleContent from '../components/BannerModule';
+import ModuleContent from '../components/ModuleConent';
 
 export default class Home extends Component {
   render() {
