@@ -46,19 +46,29 @@ export default class Home extends Component {
             padding: 10px;
           }
           .banner img {
-            max-width: 100%;
+            max-width: 50vw;
             object-fit: contain;
             height: auto;
           }
+          .banner-button img {
+            grid-area: image;
+          }
+          .banner-button p {
+            grid-area: body;
+          }
           .banner p {
-            padding: 10px;
             text-align: left;
+          }
+          .banner p,
+          .banner h2,
+          .banner img {
             margin: auto;
+            margin-left: 0;
           }
           .grid-container > div {
             text-align: center;
-            background-color: lightblue;
-            border: 1px solid orange;
+            /* background-color: lightblue; */
+            /* border: 1px solid orange; */
           }
           .modules-container {
             display: grid;

@@ -26,10 +26,10 @@ const ImageAndTextBanner = ({module, styles}) => {
           font-weight: 500;
           text-align: left;
           margin: 10px;
-          border: 1px solid red;
+          /* border: 1px solid red; */
         }
         .banner-image {
-          border: 1px solid purple;
+          /* border: 1px solid purple; */
         }
       `}
       </style>

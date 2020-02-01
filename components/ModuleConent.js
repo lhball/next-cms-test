@@ -1,5 +1,5 @@
-import ImageAndTextBanner from './ImageAndTextBanner'
-
+import BannerWithImage from './ImageAndTextBanner'
+import BannerWithButton from './ButtonBanner';
 // Module types
 const BANNER_WITH_IMAGE = 'banner';
 const BANNER_TEXT_ONLY = 'banner-text-only';
@@ -9,15 +9,16 @@ const BANNER_WIDE = 'banner-wide';
 const BANNER_VERTICAL = 'banner-vertical';
 
 const ModuleContent = ({ module, styles }) => {
-  console.log(module)
   module = JSON.parse(module)
 
   let selectedModule;
     switch (module.type) {
     case BANNER_WITH_IMAGE:
-        selectedModule = <ImageAndTextBanner module={module} styles={styles} />
+        selectedModule = <BannerWithImage module={module} styles={styles} />
+        break;
     case BANNER_WITH_BUTTON:
-      break;
+        selectedModule = <BannerWithButton module={module} styles={styles} />
+        break;
     case BANNER_TEXT_ONLY:
       break;
     case BANNER_MULTI_IMAGE:
