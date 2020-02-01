@@ -9,6 +9,11 @@ modules:
   - >-
     {"body":"![simple-couch](/img/screen-shot-2020-01-31-at-11.47.43-am.png \"a
     simple couch\")\n\n# Our services","title":"Our services","type":"banner"}
+  - >-
+    {"body":"## Let us handle the logistics for you.\n\nLorem ipseum. The fox
+    ran under the hedge swiftly turning to the
+    left.","button":{"href":"www.google.com","title":"See
+    more"},"image":"/img/furniture_modern.jpg","title":"Logistics","type":"banner-with-button"}
 headerItems: []
 ---
 
